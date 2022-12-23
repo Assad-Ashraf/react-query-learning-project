@@ -186,7 +186,8 @@ IMPORTANT: The mutate function is an asynchronous function, which means you cann
 - Optimistic Updates
 
 ```bash
-The Abbove two concepts are very vast right now and rememver we are just talking about over view of 3 building blocks of rQ right now
+The Abbove two concepts are very vast right now and rememver we are just talking about over view of 3 building blocks of rQ right now. Mutations can be done to do optimistic updates (no feel of async working, onMutation Call back gets run before our mutation function gets ececuted, onError, onSuccess + QueryCache (ability to read and write data to and from chache sync) ---> we can optimistically update our UI and in case if the mutation is failed, we can roll back to previous value, succeed we can send a background call to make sure we are watching each data setQueryData in queryCache)
+see the example useMutation Hook in this project
 ```
 
 - Mutation has onSuccess, onSettled, onError callbacks in it
@@ -202,3 +203,17 @@ The Abbove two concepts are very vast right now and rememver we are just talking
 ---
 
 # Dev Tools
+
+React Query comes with dedicated dev-tools
+
+## Import the DevTools
+
+```bash
+ import { ReactQueryDevtools } from 'react-query/devtools'
+```
+
+By default, React Query Devtools are only included in bundles when process.env.NODE_ENV === 'development', so you don't need to worry about excluding them during a production build.
+
+## Videos and Stuff
+
+![App Screenshot](server-side-challenges.png)
